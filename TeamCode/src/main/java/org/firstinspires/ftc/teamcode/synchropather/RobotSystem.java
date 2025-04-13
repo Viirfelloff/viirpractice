@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.management;
+package org.firstinspires.ftc.teamcode.synchropather;
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
@@ -12,6 +12,7 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
+import org.firstinspires.ftc.teamcode.opmodes.calibration.Drawing;
 import org.firstinspires.ftc.teamcode.subsystems.CVSubsystem;
 import org.firstinspires.ftc.teamcode.subsystems.DriveSubsystem;
 import org.firstinspires.ftc.teamcode.subsystems.InDepSubsystem;
@@ -88,6 +89,7 @@ public class RobotSystem {
 
         TelemetryPacket packet = new TelemetryPacket();
         packet.fieldOverlay().setStroke("#3F51B5");
+        Drawing.drawRobot(packet.fieldOverlay(), currentPose);
         FtcDashboard.getInstance().sendTelemetryPacket(packet);
     }
 }
